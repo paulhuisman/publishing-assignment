@@ -8,7 +8,6 @@ const StyledNav = styled.section`
     height: 50px;
     width: 100%;
     z-index: 999;
-    padding: 0 1rem;
     background: radial-gradient(
         circle,
         ${({ theme }) => theme.colors.orange},

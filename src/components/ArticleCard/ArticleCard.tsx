@@ -6,7 +6,7 @@ import { getImageCropSrc } from 'utils/images'
 import { truncate } from 'utils/truncate'
 
 // styled components
-const StyledCardContent = styled.div<{}>`
+const StyledCardContent = styled.div`
     padding: 1rem;
     position: relative;
     z-index: 1;
@@ -133,12 +133,17 @@ const ArticleCard = ({ article }: { article: Article }) => {
             <StyledBottomGradient />
             <StyledCardContent>
                 <StyledH2>{article.titel}</StyledH2>
-                <StyledDate>{article.bijgewerktDatum.formatted}</StyledDate>
 
-                <StyledHoverContent>
-                    <StyledLead>{truncate(article.lead, 138)}</StyledLead>
-                    <StyledButton>Lees meer &rarr;</StyledButton>
-                </StyledHoverContent>
+                {article.bijgewerktDatum.formatted && (
+                    <StyledDate>{article.bijgewerktDatum.formatted}</StyledDate>
+                )}
+
+                {article.lead && (
+                    <StyledHoverContent>
+                        <StyledLead>{truncate(article.lead, 138)}</StyledLead>
+                        <StyledButton>Lees meer &rarr;</StyledButton>
+                    </StyledHoverContent>
+                )}
             </StyledCardContent>
         </StyledCard>
     )

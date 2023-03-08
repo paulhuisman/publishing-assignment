@@ -1,6 +1,6 @@
 # Publishing: React + Typescript assignment
 
-Small assignemnt demonstrating React/Typescript skills.
+Small assignment demonstrating React/Typescript skills.
 
 ## How to run the app
 

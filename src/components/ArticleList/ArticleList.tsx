@@ -26,12 +26,8 @@ const StyledCardWrapper = styled(motion.section)`
 
 const ArticleList = ({ articles }: { articles: Array<Article> }) => {
     // state hooks
-    const [filteredArticles, setFilteredArticles] = useState<Array<Article>>([])
-
-    // effect hooks
-    useEffect(() => {
-        setFilteredArticles(articles)
-    }, [articles])
+    const [filteredArticles, setFilteredArticles] =
+        useState<Array<Article>>(articles)
 
     return (
         <StyledListWrapper>

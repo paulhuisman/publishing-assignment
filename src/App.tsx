@@ -21,7 +21,16 @@ const App = () => {
     useEffect(() => {
         fetch(BUNDLE_API_ENDPOINT)
             .then((response) => response.json())
-            .then((data) => setArticles(data.bundelItems))
+            .then((data) => {
+                // sort by date
+                setArticles(
+                    data.bundelItems.sort(
+                        (a: Article, b: Article) =>
+                            +new Date(b.bijgewerktDatum.timestamp) -
+                            +new Date(a.bijgewerktDatum.timestamp)
+                    )
+                )
+            })
     }, [])
 
     return (

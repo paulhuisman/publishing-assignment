@@ -30,14 +30,7 @@ const ArticleList = ({ articles }: { articles: Array<Article> }) => {
 
     // effect hooks
     useEffect(() => {
-        setFilteredArticles(
-            // default: sort by date
-            articles.sort(
-                (a: Article, b: Article) =>
-                    +new Date(b.bijgewerktDatum.timestamp) -
-                    +new Date(a.bijgewerktDatum.timestamp)
-            )
-        )
+        setFilteredArticles(articles)
     }, [articles])
 
     return (

@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/publishing-assigment/static/js/main.c53200f4.js",
-    "index.html": "/publishing-assigment/index.html",
-    "main.c53200f4.js.map": "/publishing-assigment/static/js/main.c53200f4.js.map"
+    "main.js": "/publishing-assignment/static/js/main.decb2927.js",
+    "index.html": "/publishing-assignment/index.html",
+    "main.decb2927.js.map": "/publishing-assignment/static/js/main.decb2927.js.map"
   },
   "entrypoints": [
-    "static/js/main.c53200f4.js"
+    "static/js/main.decb2927.js"
   ]
 }

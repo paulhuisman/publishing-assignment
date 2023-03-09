@@ -6,23 +6,6 @@ import { getImageCropSrc } from 'utils/images'
 import { truncate } from 'utils/truncate'
 
 // styled components
-const StyledCardContent = styled.div`
-    padding: 1rem;
-    position: relative;
-    z-index: 1;
-    text-align: left;
-    color: ${({ theme }) => theme.colors.white});
-`
-
-const StyledHoverContent = styled.div`
-    position: relative;
-    z-index: 1;
-    max-height: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
-`
-
 const StyledCard = styled(motion.a)`
     text-decoration: none;
     cursor: pointer;
@@ -62,15 +45,42 @@ const StyledCard = styled(motion.a)`
         }
     }
 
-    &:hover ${StyledHoverContent} {
-        opacity: 1;
-        visibility: visible;
-        max-height: 300px;
-    }
-
     @media ${({ theme }) => theme.devices.tabletPortrait} {
         margin-bottom: 0;
     }
+`
+
+const StyledBottomGradient = styled.div`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    transition: background-image 0.25s ease-in-out;
+
+    ${StyledCard}:hover & {
+        background-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.65) 100%
+        );
+    }
+`
+
+const StyledCardContent = styled.div`
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    color: ${({ theme }) => theme.colors.white});
 `
 
 const StyledH2 = styled.h2`
@@ -98,20 +108,19 @@ const StyledButton = styled.div`
     border-radius: 0.5rem;
 `
 
-const StyledBottomGradient = styled.div`
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+const StyledHoverContent = styled.div`
+    position: relative;
     z-index: 1;
-    background-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.8) 100%
-    );
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+
+    ${StyledCard}:hover & {
+        opacity: 1;
+        visibility: visible;
+        max-height: 300px;
+    }
 `
 
 const ArticleCard = ({ article }: { article: Article }) => {

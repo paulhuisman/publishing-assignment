@@ -52,7 +52,7 @@ const StyledCard = styled(motion.a)`
 
 const StyledBottomGradient = styled.div`
     width: 100%;
-    height: 100%;
+    height: 50%;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -60,13 +60,14 @@ const StyledBottomGradient = styled.div`
     background-image: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.8) 100%
+        rgba(0, 0, 0, 0.7) 100%
     );
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
-    transition: background-image 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
 
     ${StyledCard}:hover & {
+        height: 100%;
         background-image: linear-gradient(
             to bottom,
             rgba(0, 0, 0, 0) 0%,

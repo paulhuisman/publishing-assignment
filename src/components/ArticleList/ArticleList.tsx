@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
 import { Article } from 'types/Article'
 import ArticleFilter from 'components/ArticleFilter/ArticleFilter'
 import ArticleCard from 'components/ArticleCard/ArticleCard'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 // styled components
 const StyledListWrapper = styled.div`
@@ -39,11 +39,9 @@ const ArticleList = ({ articles }: { articles: Array<Article> }) => {
                 layout
                 transition={{ ease: 'easeInOut', duration: 0.25 }}
             >
-                <AnimatePresence>
-                    {filteredArticles.map((article) => (
-                        <ArticleCard key={article.id} article={article} />
-                    ))}
-                </AnimatePresence>
+                {filteredArticles.map((article) => (
+                    <ArticleCard key={article.id} article={article} />
+                ))}
             </StyledCardWrapper>
         </StyledListWrapper>
     )
